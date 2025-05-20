@@ -4,15 +4,20 @@ from database.db_config import conectar  # <- IMPORTAÇÃO CORRETA
 from database.produto import cadastrar_produto, listar_produtos, editar_produto, excluir_produto
 from database.cliente import cadastrar_cliente, listar_clientes, editar_cliente, excluir_cliente
 from database.funcionario import cadastrar_funcionario, listar_funcionarios, editar_funcionario, excluir_funcionario
-from database.pedido import registrar_pedido, listar_pedidos, editar_pedido, excluir_pedido, relatorio_faturamento_por_pagamento
+from database.pedido import (
+    registrar_pedido, listar_pedidos, editar_pedido, excluir_pedido,
+    relatorio_faturamento_por_pagamento, gerenciar_pedidos_cozinha
+)
 from database.estoque import visualizar_estoque
+
+from login import login  # Importe a função login do arquivo login.py
 
 def menu_produto():
     while True:
         print("\n=== MENU DE PRODUTOS ===")
         print("1. Cadastrar Produto")
         print("2. Listar Produtos")
-        print("3. Editar Produto") 
+        print("3. Editar Produto")
         print("4. Excluir Produto")
         print("0. Voltar")
         opcao = input("Escolha uma opção: ")
@@ -127,9 +132,9 @@ def menu_relatorios():
         else:
             print("Opção inválida.")
 
-def menu():
+def menu_gerente():
     while True:
-        print("\n=== SISTEMA DE GESTÃO DE LANCHONETE ===")
+        print("\n=== MENU GERENTE ===")
         print("1. Produtos")
         print("2. Clientes")
         print("3. Funcionários")
@@ -157,15 +162,70 @@ def menu():
         else:
             print("Opção inválida.")
 
-if __name__ == "__main__":
+def menu_atendente():
+    while True:
+        print("\n=== MENU ATENDENTE ===")
+        print("1. Pedidos")
+        print("2. Clientes")
+        print("0. Sair")
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == '1':
+            menu_pedido()
+        elif opcao == '2':
+            menu_cliente()
+        elif opcao == '0':
+            print("Encerrando o sistema.")
+            break
+        else:
+            print("Opção inválida.")
+
+def menu_cozinheiro():
+    while True:
+        print("\n=== MENU COZINHEIRO ===")
+        print("1. Visualizar Pedidos / Alterar Status")
+        print("0. Sair")
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == '1':
+            gerenciar_pedidos_cozinha()
+        elif opcao == '0':
+            print("Encerrando o sistema.")
+            break
+        else:
+            print("Opção inválida.")
+
+def main():
     try:
         conexao = conectar()
         if conexao.is_connected():
-            print("Conexão com o banco realizada com sucesso!")
             conexao.close()
-            menu()
+
+            # Loop para tentar login até sucesso
+            while True:
+                cargo = login()
+                if cargo:
+                    break
+                else:
+                    print("Tente novamente.\n")
+
+            # Redireciona para o menu conforme cargo
+            if cargo == "gerente":
+                menu_gerente()
+            elif cargo == "atendente":
+                menu_atendente()
+            elif cargo == "cozinheiro":
+                menu_cozinheiro()
+            else:
+                print("Cargo não reconhecido ou sem permissões.")
     except Exception as e:
         print(f"Erro ao conectar com o banco: {e}")
+
+if __name__ == "__main__":
+    main()
+
+
+
 
 
 

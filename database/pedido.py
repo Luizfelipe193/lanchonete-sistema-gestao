@@ -151,6 +151,71 @@ def relatorio_faturamento_por_pagamento():
             cursor.close()
             conexao.close()
 
+def gerenciar_pedidos_cozinha():
+    conexao = conectar()
+    cursor = conexao.cursor(dictionary=True)
+
+    try:
+        # Buscar pedidos com status pendente ou em preparo
+        query = """
+            SELECT p.id, c.nome AS cliente, pr.nome AS produto, p.quantidade, p.status
+            FROM pedidos p
+            JOIN clientes c ON p.id_cliente = c.id
+            JOIN produtos pr ON p.id_produto = pr.id
+            WHERE p.status IN ('pendente', 'em preparo')
+            ORDER BY p.id
+        """
+        cursor.execute(query)
+        pedidos = cursor.fetchall()
+
+        if not pedidos:
+            print("Nenhum pedido pendente para a cozinha no momento.")
+            return
+
+        print("\nPedidos pendentes para cozinha:")
+        for pedido in pedidos:
+            print(f"ID: {pedido['id']} - Cliente: {pedido['cliente']} - Produto: {pedido['produto']} - Quantidade: {pedido['quantidade']} - Status: {pedido['status']}")
+
+        pedido_id = input("\nDigite o ID do pedido que deseja atualizar o status (ou '0' para sair): ")
+        if pedido_id == '0':
+            return
+
+        pedido_ids = [str(p['id']) for p in pedidos]
+        if pedido_id not in pedido_ids:
+            print("ID inválido.")
+            return
+
+        print("\nEscolha o novo status:")
+        print("1 - Em preparo")
+        print("2 - Pronto")
+        print("3 - Entregue")
+        novo_status_opcao = input("Opção: ")
+
+        status_map = {
+            '1': 'em preparo',
+            '2': 'pronto',
+            '3': 'entregue'
+        }
+
+        if novo_status_opcao not in status_map:
+            print("Opção inválida.")
+            return
+
+        novo_status = status_map[novo_status_opcao]
+
+        update_query = "UPDATE pedidos SET status = %s WHERE id = %s"
+        cursor.execute(update_query, (novo_status, pedido_id))
+        conexao.commit()
+
+        print(f"Status do pedido {pedido_id} atualizado para '{novo_status}'.")
+
+    except Exception as e:
+        print(f"Erro ao gerenciar pedidos da cozinha: {e}")
+    finally:
+        cursor.close()
+        conexao.close()
+
+
 
 
 
