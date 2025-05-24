@@ -2,15 +2,16 @@ from database.db_config import conectar
 
 def cadastrar_funcionario():
     nome = input("Nome do funcionário: ")
-    cargo = input("Cargo: ")
-    login = input("Login: ")
+    cpf = input("CPF do funcionário (somente números): ")
+    cargo = input("Cargo (gerente / atendente / cozinheiro): ")
+    usuario = input("Nome de usuário: ")
     senha = input("Senha: ")
 
     conexao = conectar()
     cursor = conexao.cursor()
 
-    sql = "INSERT INTO funcionarios (nome, cargo, login, senha) VALUES (%s, %s, %s, %s)"
-    valores = (nome, cargo, login, senha)
+    sql = "INSERT INTO funcionarios (nome, cpf, cargo, usuario, senha) VALUES (%s, %s, %s, %s, %s)"
+    valores = (nome, cpf, cargo, usuario, senha)
     cursor.execute(sql, valores)
 
     conexao.commit()
@@ -18,6 +19,7 @@ def cadastrar_funcionario():
 
     cursor.close()
     conexao.close()
+
 
 def listar_funcionarios():
     conexao = conectar()
@@ -28,23 +30,25 @@ def listar_funcionarios():
 
     print("\n=== LISTA DE FUNCIONÁRIOS ===")
     for funcionario in funcionarios:
-        print(f"ID: {funcionario[0]}, Nome: {funcionario[1]}, Cargo: {funcionario[2]}, Login: {funcionario[3]}")
+        print(f"ID: {funcionario[0]}, Nome: {funcionario[1]}, CPF: {funcionario[2]}, Cargo: {funcionario[3]}, Usuário: {funcionario[4]}")
 
     cursor.close()
     conexao.close()
 
+
 def editar_funcionario():
     id_funcionario = input("ID do funcionário a editar: ")
     nome = input("Novo nome: ")
+    cpf = input("Novo CPF: ")
     cargo = input("Novo cargo: ")
-    login = input("Novo login: ")
+    usuario = input("Novo usuário: ")
     senha = input("Nova senha: ")
 
     conexao = conectar()
     cursor = conexao.cursor()
 
-    sql = "UPDATE funcionarios SET nome=%s, cargo=%s, login=%s, senha=%s WHERE id=%s"
-    valores = (nome, cargo, login, senha, id_funcionario)
+    sql = "UPDATE funcionarios SET nome=%s, cpf=%s, cargo=%s, usuario=%s, senha=%s WHERE id=%s"
+    valores = (nome, cpf, cargo, usuario, senha, id_funcionario)
     cursor.execute(sql, valores)
 
     conexao.commit()
@@ -52,6 +56,7 @@ def editar_funcionario():
 
     cursor.close()
     conexao.close()
+
 
 def excluir_funcionario():
     id_funcionario = input("ID do funcionário a excluir: ")
@@ -67,3 +72,4 @@ def excluir_funcionario():
 
     cursor.close()
     conexao.close()
+
