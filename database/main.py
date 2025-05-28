@@ -7,6 +7,7 @@ from database.pedido import (
     relatorio_faturamento_por_pagamento, gerenciar_pedidos_cozinha
 )
 from database.estoque import visualizar_estoque
+from database.mesa import visualizar_mesas, atualizar_status_mesa
 from login import login, obter_senha_admin, salvar_senha_admin
 
 def menu_administrador():
@@ -80,7 +81,7 @@ def menu_atendente():
         print("6. Listar Clientes")
         print("7. Editar Cliente")
         print("8. Excluir Cliente")
-        print("9. Listar Pedidos")  # ✅ NOVA OPÇÃO
+        print("9. Listar Pedidos")
         print("0. Voltar")
         opcao = input("Escolha uma opção: ")
 
@@ -101,12 +102,11 @@ def menu_atendente():
         elif opcao == '8':
             excluir_cliente()
         elif opcao == '9':
-            listar_pedidos()  # ✅ CHAMADA DA FUNÇÃO
+            listar_pedidos()
         elif opcao == '0':
             break
         else:
             print("Opção inválida.")
-
 
 def menu_cozinheiro():
     while True:
@@ -118,6 +118,26 @@ def menu_cozinheiro():
 
         if opcao == '1' or opcao == '2':
             gerenciar_pedidos_cozinha()
+        elif opcao == '0':
+            break
+        else:
+            print("Opção inválida.")
+
+def menu_garcom():
+    while True:
+        print("\n=== MENU GARÇOM ===")
+        print("1. Fazer Pedido")
+        print("2. Visualizar Mesas")
+        print("3. Atualizar Status da Mesa")
+        print("0. Voltar")
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == '1':
+            registrar_pedido()
+        elif opcao == '2':
+            visualizar_mesas()
+        elif opcao == '3':
+            atualizar_status_mesa()
         elif opcao == '0':
             break
         else:
@@ -156,6 +176,8 @@ def main():
                 menu_atendente()
             elif cargo == "cozinheiro":
                 menu_cozinheiro()
+            elif cargo == "garcom":
+                menu_garcom()
             else:
                 print("Cargo não reconhecido ou sem permissões.")
     except Exception as e:
@@ -163,4 +185,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
