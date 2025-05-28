@@ -214,8 +214,3 @@ def gerenciar_pedidos_cozinha():
     finally:
         cursor.close()
         conexao.close()
-
-
-
-
-

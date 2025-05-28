@@ -63,7 +63,3 @@ def visualizar_estoque():
     finally:
         cursor.close()
         conexao.close()
-
-
-
-

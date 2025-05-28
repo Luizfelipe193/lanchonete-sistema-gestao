@@ -1,7 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from database.db_config import conectar
 from database.produto import cadastrar_produto, listar_produtos, editar_produto, excluir_produto
 from database.cliente import cadastrar_cliente, listar_clientes, editar_cliente, excluir_cliente
@@ -11,17 +7,48 @@ from database.pedido import (
     relatorio_faturamento_por_pagamento, gerenciar_pedidos_cozinha
 )
 from database.estoque import visualizar_estoque
+from login import login, obter_senha_admin, salvar_senha_admin
 
-from login import login, cadastrar_usuario, recuperar_senha
-
-
-def menu_produto():
+def menu_administrador():
     while True:
-        print("\n=== MENU DE PRODUTOS ===")
+        print("\n=== MENU ADMINISTRADOR ===")
+        print("1. Cadastrar Funcionário")
+        print("2. Listar Funcionários")
+        print("3. Editar Funcionário")
+        print("4. Excluir Funcionário")
+        print("5. Ver Relatório")
+        print("6. Alterar Senha do Administrador")
+        print("0. Sair")
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == '1':
+            cadastrar_funcionario()
+        elif opcao == '2':
+            listar_funcionarios()
+        elif opcao == '3':
+            editar_funcionario()
+        elif opcao == '4':
+            excluir_funcionario()
+        elif opcao == '5':
+            relatorio_faturamento_por_pagamento()
+        elif opcao == '6':
+            nova_senha = input("Digite a nova senha para o administrador: ")
+            salvar_senha_admin(nova_senha)
+            print("✅ Senha atualizada com sucesso!")
+        elif opcao == '0':
+            break
+        else:
+            print("Opção inválida.")
+
+def menu_gerente():
+    while True:
+        print("\n=== MENU GERENTE ===")
         print("1. Cadastrar Produto")
         print("2. Listar Produtos")
         print("3. Editar Produto")
         print("4. Excluir Produto")
+        print("5. Visualizar Estoque")
+        print("6. Ver Relatório de Faturamento")
         print("0. Voltar")
         opcao = input("Escolha uma opção: ")
 
@@ -33,159 +60,49 @@ def menu_produto():
             editar_produto()
         elif opcao == '4':
             excluir_produto()
-        elif opcao == '0':
-            break
-        else:
-            print("Opção inválida.")
-
-
-def menu_cliente():
-    while True:
-        print("\n=== MENU DE CLIENTES ===")
-        print("1. Cadastrar Cliente")
-        print("2. Listar Clientes")
-        print("3. Editar Cliente")
-        print("4. Excluir Cliente")
-        print("0. Voltar")
-        opcao = input("Escolha uma opção: ")
-
-        if opcao == '1':
-            cadastrar_cliente()
-        elif opcao == '2':
-            listar_clientes()
-        elif opcao == '3':
-            editar_cliente()
-        elif opcao == '4':
-            excluir_cliente()
-        elif opcao == '0':
-            break
-        else:
-            print("Opção inválida.")
-
-
-def menu_funcionario():
-    while True:
-        print("\n=== MENU DE FUNCIONÁRIOS ===")
-        print("1. Cadastrar Funcionário")
-        print("2. Listar Funcionários")
-        print("3. Editar Funcionário")
-        print("4. Excluir Funcionário")
-        print("0. Voltar")
-        opcao = input("Escolha uma opção: ")
-
-        if opcao == '1':
-            cadastrar_funcionario()
-        elif opcao == '2':
-            listar_funcionarios()
-        elif opcao == '3':
-            editar_funcionario()
-        elif opcao == '4':
-            excluir_funcionario()
-        elif opcao == '0':
-            break
-        else:
-            print("Opção inválida.")
-
-
-def menu_pedido():
-    while True:
-        print("\n=== MENU DE PEDIDOS ===")
-        print("1. Registrar Pedido")
-        print("2. Listar Pedidos")
-        print("3. Editar Pedido")
-        print("4. Excluir Pedido")
-        print("0. Voltar")
-        opcao = input("Escolha uma opção: ")
-
-        if opcao == '1':
-            registrar_pedido()
-        elif opcao == '2':
-            listar_pedidos()
-        elif opcao == '3':
-            editar_pedido()
-        elif opcao == '4':
-            excluir_pedido()
-        elif opcao == '0':
-            break
-        else:
-            print("Opção inválida.")
-
-
-def menu_estoque():
-    while True:
-        print("\n=== MENU DE ESTOQUE ===")
-        print("1. Visualizar Movimentação de Estoque")
-        print("0. Voltar")
-        opcao = input("Escolha uma opção: ")
-
-        if opcao == '1':
+        elif opcao == '5':
             visualizar_estoque()
-        elif opcao == '0':
-            break
-        else:
-            print("Opção inválida.")
-
-
-def menu_relatorios():
-    while True:
-        print("\n=== MENU DE RELATÓRIOS ===")
-        print("1. Faturamento por Forma de Pagamento")
-        print("0. Voltar")
-        opcao = input("Escolha uma opção: ")
-
-        if opcao == '1':
+        elif opcao == '6':
             relatorio_faturamento_por_pagamento()
         elif opcao == '0':
             break
         else:
             print("Opção inválida.")
 
-
-def menu_gerente():
-    while True:
-        print("\n=== MENU GERENTE ===")
-        print("1. Produtos")
-        print("2. Clientes")
-        print("3. Funcionários")
-        print("4. Pedidos")
-        print("5. Estoque")
-        print("6. Relatórios")
-        print("0. Sair")
-        opcao = input("Escolha uma opção: ")
-
-        if opcao == '1':
-            menu_produto()
-        elif opcao == '2':
-            menu_cliente()
-        elif opcao == '3':
-            menu_funcionario()
-        elif opcao == '4':
-            menu_pedido()
-        elif opcao == '5':
-            menu_estoque()
-        elif opcao == '6':
-            menu_relatorios()
-        elif opcao == '0':
-            print("Encerrando o sistema.")
-            break
-        else:
-            print("Opção inválida.")
-
-
 def menu_atendente():
     while True:
         print("\n=== MENU ATENDENTE ===")
-        print("1. Pedidos")
-        print("2. Clientes")
-        print("0. Sair")
+        print("1. Fazer Pedido")
+        print("2. Editar Pedido")
+        print("3. Excluir Pedido")
+        print("4. Visualizar Estoque")
+        print("5. Cadastrar Cliente")
+        print("6. Listar Clientes")
+        print("7. Editar Cliente")
+        print("8. Excluir Cliente")
+        print("9. Listar Pedidos")  # ✅ NOVA OPÇÃO
+        print("0. Voltar")
         opcao = input("Escolha uma opção: ")
 
         if opcao == '1':
-            menu_pedido()
+            registrar_pedido()
         elif opcao == '2':
-            menu_cliente()
+            editar_pedido()
+        elif opcao == '3':
+            excluir_pedido()
+        elif opcao == '4':
+            visualizar_estoque()
+        elif opcao == '5':
+            cadastrar_cliente()
+        elif opcao == '6':
+            listar_clientes()
+        elif opcao == '7':
+            editar_cliente()
+        elif opcao == '8':
+            excluir_cliente()
+        elif opcao == '9':
+            listar_pedidos()  # ✅ CHAMADA DA FUNÇÃO
         elif opcao == '0':
-            print("Encerrando o sistema.")
             break
         else:
             print("Opção inválida.")
@@ -194,25 +111,22 @@ def menu_atendente():
 def menu_cozinheiro():
     while True:
         print("\n=== MENU COZINHEIRO ===")
-        print("1. Visualizar Pedidos / Alterar Status")
-        print("0. Sair")
+        print("1. Ver Pedidos Pendentes")
+        print("2. Atualizar Status de Pedido")
+        print("0. Voltar")
         opcao = input("Escolha uma opção: ")
 
-        if opcao == '1':
+        if opcao == '1' or opcao == '2':
             gerenciar_pedidos_cozinha()
         elif opcao == '0':
-            print("Encerrando o sistema.")
             break
         else:
             print("Opção inválida.")
-
 
 def menu_inicial():
     while True:
         print("\n=== SISTEMA DE GESTÃO DE LANCHONETE ===")
         print("1. Login")
-        print("2. Cadastrar Novo Usuário")
-        print("3. Esqueci minha Senha")
         print("0. Sair")
         escolha = input("Escolha uma opção: ")
 
@@ -220,16 +134,11 @@ def menu_inicial():
             cargo = login()
             if cargo:
                 return cargo
-        elif escolha == "2":
-            cadastrar_usuario()
-        elif escolha == "3":
-            recuperar_senha()
         elif escolha == "0":
             print("Encerrando o sistema.")
             exit()
         else:
             print("Opção inválida.")
-
 
 def main():
     try:
@@ -239,8 +148,9 @@ def main():
 
             cargo = menu_inicial()
 
-            # Redireciona para o menu conforme o cargo
-            if cargo == "gerente":
+            if cargo == "administrador":
+                menu_administrador()
+            elif cargo == "gerente":
                 menu_gerente()
             elif cargo == "atendente":
                 menu_atendente()
@@ -251,27 +161,6 @@ def main():
     except Exception as e:
         print(f"Erro ao conectar com o banco: {e}")
 
-
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

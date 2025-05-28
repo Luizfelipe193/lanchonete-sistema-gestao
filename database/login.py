@@ -1,4 +1,5 @@
 import mysql.connector
+import os
 
 def conectar_bd():
     return mysql.connector.connect(
@@ -8,9 +9,25 @@ def conectar_bd():
         database="lanchonete_db"
     )
 
+def obter_senha_admin():
+    if not os.path.exists("admin_senha.txt"):
+        with open("admin_senha.txt", "w") as f:
+            f.write("1234")  # senha padrão
+    with open("admin_senha.txt", "r") as f:
+        return f.read().strip()
+
+def salvar_senha_admin(nova_senha):
+    with open("admin_senha.txt", "w") as f:
+        f.write(nova_senha)
+
 def login():
     usuario = input("Usuário: ")
     senha = input("Senha: ")
+
+    # Login fixo do administrador
+    if usuario == "admin1234" and senha == obter_senha_admin():
+        print("\n✅ Bem-vindo, Administrador!")
+        return "administrador"
 
     conn = conectar_bd()
     cursor = conn.cursor(dictionary=True)
@@ -28,64 +45,5 @@ def login():
     else:
         print("\n❌ Usuário ou senha incorretos.")
         return None
-
-
-def cadastrar_usuario():
-    nome = input("Nome completo: ")
-    cpf = input("CPF: ")
-    cargo = input("Cargo (gerente / atendente / cozinheiro): ")
-    usuario = input("Usuário desejado: ")
-    senha = input("Senha: ")
-
-    conn = conectar_bd()
-    cursor = conn.cursor()
-
-    query = "INSERT INTO funcionarios (nome, cpf, cargo, usuario, senha) VALUES (%s, %s, %s, %s, %s)"
-    valores = (nome, cpf, cargo, usuario, senha)
-    cursor.execute(query, valores)
-
-    conn.commit()
-    print("\n✅ Usuário cadastrado com sucesso!")
-
-    cursor.close()
-    conn.close()
-
-
-def recuperar_senha():
-    usuario = input("Digite seu nome de usuário: ")
-    cpf = input("Digite seu CPF cadastrado: ")
-
-    conn = conectar_bd()
-    cursor = conn.cursor(dictionary=True)
-
-    query = "SELECT senha FROM funcionarios WHERE usuario = %s AND cpf = %s"
-    cursor.execute(query, (usuario, cpf))
-    resultado = cursor.fetchone()
-
-    cursor.close()
-    conn.close()
-
-    if resultado:
-        print(f"\n🔐 Sua senha é: {resultado['senha']}")
-    else:
-        print("\n❌ Usuário ou CPF não encontrados.")
-
-
-# Apenas para testes individuais
-if __name__ == "__main__":
-    print("1 - Login")
-    print("2 - Cadastrar novo usuário")
-    print("3 - Esqueci minha senha")
-
-    escolha = input("Escolha uma opção: ")
-
-    if escolha == "1":
-        login()
-    elif escolha == "2":
-        cadastrar_usuario()
-    elif escolha == "3":
-        recuperar_senha()
-    else:
-        print("Opção inválida.")
 
 

@@ -1,9 +1,18 @@
 from database.db_config import conectar
 
+CARGOS_VALIDOS = ["gerente", "atendente", "cozinheiro", "garcom"]
+
 def cadastrar_funcionario():
     nome = input("Nome do funcionário: ")
     cpf = input("CPF do funcionário (somente números): ")
-    cargo = input("Cargo (gerente / atendente / cozinheiro): ")
+
+    while True:
+        cargo = input("Cargo (gerente / atendente / cozinheiro / garcom): ").lower()
+        if cargo in CARGOS_VALIDOS:
+            break
+        else:
+            print("❌ Cargo inválido. Escolha entre: gerente, atendente, cozinheiro ou garcom.")
+
     usuario = input("Nome de usuário: ")
     senha = input("Senha: ")
 
@@ -15,7 +24,7 @@ def cadastrar_funcionario():
     cursor.execute(sql, valores)
 
     conexao.commit()
-    print("Funcionário cadastrado com sucesso!")
+    print("✅ Funcionário cadastrado com sucesso!")
 
     cursor.close()
     conexao.close()
@@ -40,7 +49,14 @@ def editar_funcionario():
     id_funcionario = input("ID do funcionário a editar: ")
     nome = input("Novo nome: ")
     cpf = input("Novo CPF: ")
-    cargo = input("Novo cargo: ")
+
+    while True:
+        cargo = input("Novo cargo (gerente / atendente / cozinheiro / garcom): ").lower()
+        if cargo in CARGOS_VALIDOS:
+            break
+        else:
+            print("❌ Cargo inválido. Escolha entre: gerente, atendente, cozinheiro ou garcom.")
+
     usuario = input("Novo usuário: ")
     senha = input("Nova senha: ")
 
@@ -52,7 +68,7 @@ def editar_funcionario():
     cursor.execute(sql, valores)
 
     conexao.commit()
-    print("Funcionário atualizado com sucesso!")
+    print("✅ Funcionário atualizado com sucesso!")
 
     cursor.close()
     conexao.close()
@@ -68,8 +84,9 @@ def excluir_funcionario():
     cursor.execute(sql, (id_funcionario,))
 
     conexao.commit()
-    print("Funcionário excluído com sucesso!")
+    print("✅ Funcionário excluído com sucesso!")
 
     cursor.close()
     conexao.close()
+
 
