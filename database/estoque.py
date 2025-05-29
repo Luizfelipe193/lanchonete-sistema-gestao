@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from database.db_config import conectar
 
 def atualizar_estoque(id_produto, quantidade, operacao):
@@ -24,7 +28,7 @@ def atualizar_estoque(id_produto, quantidade, operacao):
         sql_registro = """
             INSERT INTO estoque (id_produto, quantidade_entrada, quantidade_saida)
             VALUES (%s, %s, %s)
-        """
+        """.strip()  # Removendo quebras de linha e espaços
         entrada = quantidade if operacao == 'entrada' else 0
         saida = quantidade if operacao == 'saida' else 0
         cursor.execute(sql_registro, (id_produto, entrada, saida))
