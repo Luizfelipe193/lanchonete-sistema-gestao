@@ -1,13 +1,13 @@
 import unittest
 from unittest.mock import patch
-from database.pedido import registrar_pedido, listar_pedidos, editar_pedido, excluir_pedido
+from lanchonete_sistema_gestao.pedido import registrar_pedido, listar_pedidos, editar_pedido, excluir_pedido
 
 
 class TestPedido(unittest.TestCase):
 
     @patch('builtins.input', side_effect=['1', '2', '3', 'Pendente', 'Pix'])
-    @patch('database.pedido.conectar')
-    @patch('database.pedido.atualizar_estoque')
+    @patch('lanchonete_sistema_gestao.pedido.conectar')
+    @patch('lanchonete_sistema_gestao.pedido.atualizar_estoque')
     def test_registrar_pedido(self, mock_atualizar_estoque, mock_conectar, mock_input):
         mock_cursor = mock_conectar.return_value.cursor.return_value
         mock_cursor.fetchone.return_value = (10.00,)
@@ -18,7 +18,7 @@ class TestPedido(unittest.TestCase):
         mock_conectar.return_value.commit.assert_called()
         mock_atualizar_estoque.assert_called_once_with('2', 3, 'saida')
 
-    @patch('database.pedido.conectar')
+    @patch('lanchonete_sistema_gestao.pedido.conectar')
     def test_listar_pedidos(self, mock_conectar):
         mock_cursor = mock_conectar.return_value.cursor.return_value
         mock_cursor.fetchall.return_value = [
@@ -30,8 +30,8 @@ class TestPedido(unittest.TestCase):
         mock_cursor.execute.assert_called_once()
 
     @patch('builtins.input', side_effect=['1', '5', 'Entregue', 'Dinheiro'])
-    @patch('database.pedido.conectar')
-    @patch('database.pedido.atualizar_estoque')
+    @patch('lanchonete_sistema_gestao.pedido.conectar')
+    @patch('lanchonete_sistema_gestao.pedido.atualizar_estoque')
     def test_editar_pedido(self, mock_atualizar_estoque, mock_conectar, mock_input):
         mock_cursor = mock_conectar.return_value.cursor.return_value
         mock_cursor.fetchone.side_effect = [
@@ -46,8 +46,8 @@ class TestPedido(unittest.TestCase):
         mock_conectar.return_value.commit.assert_called_once()
 
     @patch('builtins.input', side_effect=['1', 's'])
-    @patch('database.pedido.conectar')
-    @patch('database.pedido.atualizar_estoque')
+    @patch('lanchonete_sistema_gestao.pedido.conectar')
+    @patch('lanchonete_sistema_gestao.pedido.atualizar_estoque')
     def test_excluir_pedido(self, mock_atualizar_estoque, mock_conectar, mock_input):
         mock_cursor = mock_conectar.return_value.cursor.return_value
         mock_cursor.fetchone.return_value = (2, 3)

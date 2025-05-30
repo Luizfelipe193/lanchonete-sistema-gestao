@@ -1,11 +1,12 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from database import produto  # Corrigido o import
+from lanchonete_sistema_gestao import produto
+
 
 class TestProduto(unittest.TestCase):
 
-    @patch('database.produto.input', side_effect=['Pastel de queijo', 'Pastel', '12.00', '10'])
-    @patch('database.produto.conectar')
+    @patch('lanchonete_sistema_gestao.produto.input', side_effect=['Pastel de queijo', 'Pastel', '12.00', '10'])
+    @patch('lanchonete_sistema_gestao.produto.conectar')
     def test_cadastrar_produto(self, mock_conectar, mock_input):
         mock_conn = MagicMock()
         mock_cursor = MagicMock()
@@ -18,7 +19,7 @@ class TestProduto(unittest.TestCase):
         self.assertTrue(mock_conn.commit.called)
         mock_conn.close.assert_called_once()
 
-    @patch('database.produto.conectar')
+    @patch('lanchonete_sistema_gestao.produto.conectar')
     def test_listar_produtos(self, mock_conectar):
         mock_conn = MagicMock()
         mock_cursor = MagicMock()
@@ -38,8 +39,8 @@ class TestProduto(unittest.TestCase):
         self.assertTrue(mock_conn.close.called)
         mock_print.assert_any_call("ID: 2, Nome: Pastel de queijo, Categoria: Pastel, Preço: R$12.00, Estoque: 10")
 
-    @patch('database.produto.input', side_effect=['2', 'Novo Pastel', 'Nova Categoria', '15.00', '12'])
-    @patch('database.produto.conectar')
+    @patch('lanchonete_sistema_gestao.produto.input', side_effect=['2', 'Novo Pastel', 'Nova Categoria', '15.00', '12'])
+    @patch('lanchonete_sistema_gestao.produto.conectar')
     def test_editar_produto(self, mock_conectar, mock_input):
         mock_conn = MagicMock()
         mock_cursor = MagicMock()
@@ -52,8 +53,8 @@ class TestProduto(unittest.TestCase):
         self.assertTrue(mock_conn.commit.called)
         self.assertTrue(mock_conn.close.called)
 
-    @patch('database.produto.input', return_value='2')
-    @patch('database.produto.conectar')
+    @patch('lanchonete_sistema_gestao.produto.input', return_value='2')
+    @patch('lanchonete_sistema_gestao.produto.conectar')
     def test_excluir_produto(self, mock_conectar, mock_input):
         mock_conn = MagicMock()
         mock_cursor = MagicMock()

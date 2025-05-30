@@ -1,10 +1,11 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from database import cliente
+from lanchonete_sistema_gestao import cliente
+
 
 class TestCliente(unittest.TestCase):
 
-    @patch('database.cliente.conectar')
+    @patch('lanchonete_sistema_gestao.cliente.conectar')
     @patch('builtins.input', side_effect=["João", "123.456.789-00", "11999999999", "Rua A"])
     def test_cadastrar_cliente(self, mock_input, mock_conectar):
         mock_conn = MagicMock()
@@ -19,7 +20,7 @@ class TestCliente(unittest.TestCase):
         mock_cursor.close.assert_called_once()
         mock_conn.close.assert_called_once()
 
-    @patch('database.cliente.conectar')
+    @patch('lanchonete_sistema_gestao.cliente.conectar')
     def test_listar_clientes(self, mock_conectar):
         mock_conn = MagicMock()
         mock_cursor = MagicMock()
@@ -36,7 +37,7 @@ class TestCliente(unittest.TestCase):
         mock_cursor.close.assert_called_once()
         mock_conn.close.assert_called_once()
 
-    @patch('database.cliente.conectar')
+    @patch('lanchonete_sistema_gestao.cliente.conectar')
     @patch('builtins.input', side_effect=["1", "Maria", "987.654.321-00", "11888888888", "Rua B"])
     def test_editar_cliente(self, mock_input, mock_conectar):
         mock_conn = MagicMock()
@@ -51,7 +52,7 @@ class TestCliente(unittest.TestCase):
         mock_cursor.close.assert_called_once()
         mock_conn.close.assert_called_once()
 
-    @patch('database.cliente.conectar')
+    @patch('lanchonete_sistema_gestao.cliente.conectar')
     @patch('builtins.input', return_value="1")
     def test_excluir_cliente(self, mock_input, mock_conectar):
         mock_conn = MagicMock()
