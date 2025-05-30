@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ccd4efe-7bde-4221-84c3-194cb0fbc91a" name="Changes" comment="atualizando testes unitarios">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PythonProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestao_Lanchonete.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/admin_senha.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test_cliente.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test_estoque.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test_login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test_mesa.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test_pedido.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test_produto.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test_relatorio_pagamento.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/lanchonete_sistema_gestao" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Luizfelipe193&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Luizfelipe193/lanchonete-sistema-gestao.git&quot;,
+    &quot;accountId&quot;: &quot;54931ddf-e5c3-47e4-aa7c-7e96bc0bcb65&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2x4Fg9pTnVqsurUgN2siTVn4j57" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests in Tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_cliente.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_estoque.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_funcionario.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_login.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_main.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_mesa.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_pedido.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_produto.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_relatorio_pagamento.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cliente.executor&quot;: &quot;Run&quot;,
+    &quot;Python.db_config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.estoque.executor&quot;: &quot;Run&quot;,
+    &quot;Python.login.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pedido.executor&quot;: &quot;Run&quot;,
+    &quot;Python.produto.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_produto.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ednag\PycharmProjects\PythonProject\lanchonete_sistema_gestao" />
+      <recent name="C:\Users\ednag\PycharmProjects\PythonProject\database" />
+      <recent name="C:\Users\ednag\PycharmProjects\PythonProject\Tests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/database" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\ednag\PycharmProjects\PythonProject\lanchonete_sistema_gestao\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in Tests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_cliente.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Tests/test_cliente.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python tests.Python tests in Tests" />
+        <item itemvalue="Python tests.Python tests in test_cliente.py" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PY-251.25410.122" />
+        <option value="bundled-python-sdk-880ecab49056-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.122" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ccd4efe-7bde-4221-84c3-194cb0fbc91a" name="Changes" comment="" />
+      <created>1747189547183</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747189547183</updated>
+      <workItem from="1747189548227" duration="5145000" />
+      <workItem from="1747246488746" duration="8722000" />
+      <workItem from="1747336235214" duration="7230000" />
+      <workItem from="1747353254824" duration="166000" />
+      <workItem from="1747402542684" duration="7511000" />
+      <workItem from="1747425030741" duration="1690000" />
+      <workItem from="1747501017351" duration="724000" />
+      <workItem from="1747501777465" duration="1290000" />
+      <workItem from="1747759345197" duration="8556000" />
+      <workItem from="1747777968098" duration="2779000" />
+      <workItem from="1747787434977" duration="206000" />
+      <workItem from="1747928474324" duration="599000" />
+      <workItem from="1747934013894" duration="3116000" />
+      <workItem from="1748106268390" duration="3579000" />
+      <workItem from="1748385888300" duration="7261000" />
+      <workItem from="1748427845410" duration="8248000" />
+      <workItem from="1748476059557" duration="1201000" />
+      <workItem from="1748544385032" duration="4759000" />
+      <workItem from="1748560411837" duration="6612000" />
+      <workItem from="1748567595173" duration="1104000" />
+    </task>
+    <task id="LOCAL-00001" summary="adicionado esqueceu senha, cadastro e CPF a funcionarios">
+      <option name="closed" value="true" />
+      <created>1748110779796</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748110779796</updated>
+    </task>
+    <task id="LOCAL-00002" summary="adicionado esqueceu senha, cadastro e CPF a funcionarios">
+      <option name="closed" value="true" />
+      <created>1748468829142</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748468829142</updated>
+    </task>
+    <task id="LOCAL-00003" summary="garcom e suas funcoes">
+      <option name="closed" value="true" />
+      <created>1748470854187</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748470854187</updated>
+    </task>
+    <task id="LOCAL-00004" summary="garcom e suas funcoes">
+      <option name="closed" value="true" />
+      <created>1748471054754</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1748471054754</updated>
+    </task>
+    <task id="LOCAL-00005" summary="atualizando testes unitarios">
+      <option name="closed" value="true" />
+      <created>1748548569838</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1748548569838</updated>
+    </task>
+    <task id="LOCAL-00006" summary="atualizando testes unitarios">
+      <option name="closed" value="true" />
+      <created>1748566411542</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748566411542</updated>
+    </task>
+    <task id="LOCAL-00007" summary="atualizando testes unitarios">
+      <option name="closed" value="true" />
+      <created>1748567249523</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1748567249523</updated>
+    </task>
+    <task id="LOCAL-00008" summary="atualizando testes unitarios">
+      <option name="closed" value="true" />
+      <created>1748567470200</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1748567470200</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adicionado esqueceu senha, cadastro e CPF a funcionarios" />
+    <MESSAGE value="garcom e suas funcoes" />
+    <MESSAGE value="atualizando testes unitarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="atualizando testes unitarios" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PythonProject$cliente.coverage" NAME="cliente Coverage Results" MODIFIED="1747265295948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/database" />
+    <SUITE FILE_PATH="coverage/PythonProject$pedido.coverage" NAME="pedido Coverage Results" MODIFIED="1747337156978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/database" />
+    <SUITE FILE_PATH="coverage/PythonProject$.coverage" NAME=" Coverage Results" MODIFIED="1748567429129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/PythonProject$main.coverage" NAME="main Coverage Results" MODIFIED="1748567442414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/database" />
+    <SUITE FILE_PATH="coverage/PythonProject$db_config.coverage" NAME="db_config Coverage Results" MODIFIED="1748565896134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/database" />
+    <SUITE FILE_PATH="coverage/PythonProject$produto.coverage" NAME="produto Coverage Results" MODIFIED="1747348790609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/database" />
+    <SUITE FILE_PATH="coverage/PythonProject$test_produto.coverage" NAME="test_produto Coverage Results" MODIFIED="1747407294468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/PythonProject$login.coverage" NAME="login Coverage Results" MODIFIED="1747769289998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/database" />
+    <SUITE FILE_PATH="coverage/PythonProject$estoque.coverage" NAME="estoque Coverage Results" MODIFIED="1748565100826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lanchonete_sistema_gestao" />
+  </component>
+</project>
